@@ -1,0 +1,236 @@
+<html>
+<head>
+<title>Get Table</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+ 
+ 
+ 
+ 
+ 
+ 
+<script type="text/javascript">
+$(document).ready(function() {
+
+
+        $('input[type=radio]').on('change', function(){
+    		$('input[type=radio]').not(this).prop('checked', false);
+		});
+
+    
+    var show = $('#3TTotal').val()
+                  
+                  
+    $("#btnSubmit").click(function(){
+        var qual_d = parseFloat($('#qual_d').val())
+        var mqual_d = parseFloat($('#mqual_d').val())
+        var nqual_d = parseFloat($('#nqual_d').val())
+        var Sswipe = parseFloat($('#Sswipe').val())
+        var Skey = parseFloat($('#Skey').val())
+        var Pswipe = parseFloat($('#Pswipe').val())
+        var Pkey = parseFloat($('#Pkey').val())
+        var show = parseFloat($('#3TTotal'))
+       
+           
+        $('#3TTotal').val(($('#qual_d').val() * ($('#qual').val() / 100)) + ($('#mqual_d').val() * ($('#mqual').val()) / 100) + ($('#nqual_d').val() * ($('#nqual').val() / 100)));
+        $('#STotal').val((qual_d * (Sswipe/100)) + ((mqual_d + nqual_d) * (Skey / 100)));
+        $('#PTotal').val((qual_d * (Pswipe/100)) + ((mqual_d + nqual_d) * (Pkey / 100))).toFixed(2);
+ 
+    });
+});
+</script>       
+ 
+ 
+</head>
+    <body>
+ 
+    <h2>Compare pricing plans for customers moving <em>from </em><u>3 Tier pricing</u> <em>to</em> <u>Simplified Pricing (SPP)</u> </h2>
+    <p>
+    <ol>
+        <li>Enter the  dollar amounts processed below.  Make sure to add them to either Qual, MID-Qual, or NON-Qual</li>
+ 
+        <li> Enter your customer's current 3 Tiered discount rates</li>
+        <li>Click the <strong>Compare Rates </strong>button at the bottom </li>
+    </ol>
+<p>
+<table width="600px">
+<colgroup span="3" class="columns"></colgroup>
+    <tr>
+        <th align="left">Total amount processed for <u>QUAL</u> transactions</th>
+        <th align="left">Total amount processed for <u>MID-QUAL</u> transactions</th>
+        <th align="left">Total amount processed for <u>NON-QUAL</u> transactions</th>
+    </tr>
+    <tr>
+        <td>$
+            <input id="qual_d" type="text" value="1000.00" />
+        </td>
+        <td>$
+            <input id="mqual_d" type="text" value="2500.00" />
+        </td>
+        <td>$
+            <input id="nqual_d" type="text" value="1200.00" />
+        </td>
+    </tr>
+ 
+</table>
+ 
+  
+<br><br><br>
+ 
+  
+<table width="800">
+    <tr>
+        <th width="200" align='left'>3 Tier Rates</th>
+        <th width="380">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th width="220">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
+    </tr>
+    <tr>
+        <td align="right">
+            Qual %:
+            <input id='qual' type='text' value='1.69' /></td>
+            <td align="right">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            Mid-Qual %:
+            <input id='mqual' type='text' value='2.52' /></td>
+            <td align="right">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            Non-Qual %:
+            <input id='nqual' type='text' value='3.96' /></td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </tr>
+    <tr align='right'>
+        <td>
+        </td>
+        <td>
+            <h3>
+                <strong>The total charges are....&nbsp;</strong>&nbsp;&nbsp;&nbsp;
+                $<input id='3TTotal' type='text' />
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+  </td>
+  </tr>
+ 
+</table>
+ 
+ 
+ 
+<table>
+    <tr>
+        <th width="218" align='left'>SPP Subscription</th>
+        <th width="261">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th width="51">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
+    </tr>
+    <tr>
+        <td align="right">
+            Swiped %:
+            <input id='Sswipe' type='text' value='1.75' /></td>
+        <td align="right"> Keyed %:
+            <input id='Skey' type='text' value='3.15' /></td>
+ 
+    </tr>
+    <tr>
+        <td>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </tr>
+    <tr align='right'>
+        <td>
+        </td>
+        <td>
+            <h3>
+                <strong>The total charges are....&nbsp; </strong>&nbsp; &nbsp;&nbsp;
+                $<input id='STotal' type='text' />
+            </H3>
+        </td>
+    </tr>
+ 
+ 
+    <tr>
+        <td>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+        </td>
+    </tr>
+</table>
+ 
+ 
+ 
+ 
+<table>
+    <tr>
+        <th width="218" align='left'>SPP Pay As You Go</th>
+        <th width="274">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
+        <th width="43">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
+    </tr>
+    <tr>
+        <td align="right">
+            Swiped %:
+            <input id='Pswipe' type='text' value='2.4' />
+        </td>
+        <td align="right">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+            Keyed %:
+            <input id='Pkey' type='text' value='3.4' />
+        </td>
+ 
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr align='right'>
+        <td>
+
+        </td>
+        <td>
+            <h3>
+                <strong>The total charges are....&nbsp; </strong>&nbsp; &nbsp;&nbsp;
+                $<input id='PTotal' type='text' />
+            </h3>
+        </td>
+    </tr>
+</table>
+ 
+ 
+<br><br><br>
+<form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
+<div>
+<u>Select how much they Swipe and Key:</u><br><br>
+    <input type="radio" name="Key" > All Keyed<br>
+        <input type="radio" name="SomeKey" > Mostly Keyed<br>
+            <input type="radio" name="Half" > Half and Half<br>
+                <input type="radio" name="SomeSwipe" > Mostly Swiped<br>
+                    <input type="radio" name="Swipe" > All Swiped<br>
+</div>
+</form>
+<br><br><br>
+ 
+ 
+<button id="btnSubmit">Compare Rates</button>
+ 
+ 
+</body>
+</html>
