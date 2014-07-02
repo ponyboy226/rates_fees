@@ -1,0 +1,198 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Rates</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="page-header">
+        <h1>Compare pricing plans for customers moving from 3 Tier pricing to Simplified Pricing (SPP)<h1>
+          </div>
+          <p></p>
+          <ol>
+            <li>Enter the dollar amounts processed below. Make sure to add them to either Qual, MID-Qual, or NON-Qual</li>
+            <li>Enter your customer's current 3 Tiered discount rates</li>
+            <li>Click the Compare Rates button at the bottom</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-lg-6">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="qual_d" class="col-lg-4 control-label text-right">Qual</label>
+                <div class="col-lg-8">
+                  <input type="email" class="form-control" id="qual_d" value="1000.00">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mqual_d" class="col-lg-4 control-label text-right">Mid-Qual </label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="email" id="mqual_d" value="2500.00">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nqual_d" class="col-lg-4 control-label text-right">Non-Qual </label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="email" id="nqual_d" value="1200.00">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="qual" class="col-lg-4 control-label text-right">Qual %</label>
+                <div class="col-lg-8">
+                  <input type="email" class="form-control" id="qual" value="1.69">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mqual" class="col-lg-4 control-label text-right">Mid-Qual %</label>
+                <div class="col-lg-8">
+                  <input class="form-control" id="mqual" value="2.52">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nqual" class="col-lg-4 control-label text-right">Non-Qual %</label>
+                <div class="col-lg-8">
+                  <input class="form-control" id="nqual" value="3.96">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="" class="col-lg-4 control-label text-right">Total:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" id="3TTotal"  disabled>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h4>SPP Subscription</h4>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="qual" class="col-lg-2 control-label text-right">Swiped %</label>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" id="Sswipe" value="1.75">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="qual" class="col-lg-2 control-label text-right">Keyed %</label>
+              <div class="col-lg-6">
+                <input class="form-control" type="email" id="Skey" value="3.15">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="qual" class="col-lg-2 control-label text-right">Total:</label>
+              <div class="col-lg-6">
+                <input class="form-control" id="STotal" disabled>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h4>SPP Pay As You Go</h4>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="Sswipe" class="col-lg-2 control-label text-right">Swiped %</label>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" id="Pswipe" value="2.4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Skey" class="col-lg-2 control-label text-right">Keyed %</label>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" id="Pkey" value="3.4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="STotal" class="col-lg-2 control-label text-right">Total:</label>
+              <div class="col-lg-6">
+                <input class="form-control" id="PTotal" disabled>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="col-lg-offset-2">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                All Keyed
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                Mostly Keyed
+              </label>
+            </div>
+            <div class="radio ">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+                Half and Half
+              </label>
+            </div>
+            <div class="radio ">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" >
+                Mostly Swiped
+              </label>
+            </div>
+            <div class="radio ">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios5" value="option5" >
+                All Swiped
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="col-lg-offset-2">
+            <button type="submit" id="btnSubmit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+        <h2>TOAST<h2>
+          </div>
+
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+          <script src="js/main.js"></script>
+
+        </div>
+      </div>
+    </div>
+    </body>
+    </html>
