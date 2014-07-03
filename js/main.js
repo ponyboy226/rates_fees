@@ -42,4 +42,5 @@ $(document).ready(function() {
         $('#STotal').val(beta*n);
         $('#PTotal').val(gamma*n);
 
+    });
 });
