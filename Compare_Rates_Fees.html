@@ -1,236 +1,205 @@
-<html>
+<!doctype html>
+<html class="no-js" lang="">
 <head>
-<title>Get Table</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
- 
- 
- 
- 
- 
- 
-<script type="text/javascript">
-$(document).ready(function() {
-
-
-        $('input[type=radio]').on('change', function(){
-    		$('input[type=radio]').not(this).prop('checked', false);
-		});
-
-    
-    var show = $('#3TTotal').val()
-                  
-                  
-    $("#btnSubmit").click(function(){
-        var qual_d = parseFloat($('#qual_d').val())
-        var mqual_d = parseFloat($('#mqual_d').val())
-        var nqual_d = parseFloat($('#nqual_d').val())
-        var Sswipe = parseFloat($('#Sswipe').val())
-        var Skey = parseFloat($('#Skey').val())
-        var Pswipe = parseFloat($('#Pswipe').val())
-        var Pkey = parseFloat($('#Pkey').val())
-        var show = parseFloat($('#3TTotal'))
-       
-           
-        $('#3TTotal').val(($('#qual_d').val() * ($('#qual').val() / 100)) + ($('#mqual_d').val() * ($('#mqual').val()) / 100) + ($('#nqual_d').val() * ($('#nqual').val() / 100)));
-        $('#STotal').val((qual_d * (Sswipe/100)) + ((mqual_d + nqual_d) * (Skey / 100)));
-        $('#PTotal').val((qual_d * (Pswipe/100)) + ((mqual_d + nqual_d) * (Pkey / 100))).toFixed(2);
- 
-    });
-});
-</script>       
- 
- 
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Rates</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
-    <body>
- 
-    <h2>Compare pricing plans for customers moving <em>from </em><u>3 Tier pricing</u> <em>to</em> <u>Simplified Pricing (SPP)</u> </h2>
-    <p>
-    <ol>
-        <li>Enter the  dollar amounts processed below.  Make sure to add them to either Qual, MID-Qual, or NON-Qual</li>
- 
-        <li> Enter your customer's current 3 Tiered discount rates</li>
-        <li>Click the <strong>Compare Rates </strong>button at the bottom </li>
-    </ol>
-<p>
-<table width="600px">
-<colgroup span="3" class="columns"></colgroup>
-    <tr>
-        <th align="left">Total amount processed for <u>QUAL</u> transactions</th>
-        <th align="left">Total amount processed for <u>MID-QUAL</u> transactions</th>
-        <th align="left">Total amount processed for <u>NON-QUAL</u> transactions</th>
-    </tr>
-    <tr>
-        <td>$
-            <input id="qual_d" type="text" value="1000.00" />
-        </td>
-        <td>$
-            <input id="mqual_d" type="text" value="2500.00" />
-        </td>
-        <td>$
-            <input id="nqual_d" type="text" value="1200.00" />
-        </td>
-    </tr>
- 
-</table>
- 
-  
-<br><br><br>
- 
-  
-<table width="800">
-    <tr>
-        <th width="200" align='left'>3 Tier Rates</th>
-        <th width="380">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
-        <th width="220">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
-    </tr>
-    <tr>
-        <td align="right">
-            Qual %:
-            <input id='qual' type='text' value='1.69' /></td>
-            <td align="right">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            Mid-Qual %:
-            <input id='mqual' type='text' value='2.52' /></td>
-            <td align="right">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            Non-Qual %:
-            <input id='nqual' type='text' value='3.96' /></td>
-    </tr>
-    <tr>
-        <td>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        </td>
-    </tr>
-    <tr align='right'>
-        <td>
-        </td>
-        <td>
-            <h3>
-                <strong>The total charges are....&nbsp;</strong>&nbsp;&nbsp;&nbsp;
-                $<input id='3TTotal' type='text' />
-            </h3>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-  </td>
-  </tr>
- 
-</table>
- 
- 
- 
-<table>
-    <tr>
-        <th width="218" align='left'>SPP Subscription</th>
-        <th width="261">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
-        <th width="51">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
-    </tr>
-    <tr>
-        <td align="right">
-            Swiped %:
-            <input id='Sswipe' type='text' value='1.75' /></td>
-        <td align="right"> Keyed %:
-            <input id='Skey' type='text' value='3.15' /></td>
- 
-    </tr>
-    <tr>
-        <td>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        </td>
-    </tr>
-    <tr align='right'>
-        <td>
-        </td>
-        <td>
-            <h3>
-                <strong>The total charges are....&nbsp; </strong>&nbsp; &nbsp;&nbsp;
-                $<input id='STotal' type='text' />
-            </H3>
-        </td>
-    </tr>
- 
- 
-    <tr>
-        <td>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        </td>
-    </tr>
-    <tr>
-        <td>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-        </td>
-    </tr>
-</table>
- 
- 
- 
- 
-<table>
-    <tr>
-        <th width="218" align='left'>SPP Pay As You Go</th>
-        <th width="274">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
-        <th width="43">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</th>
-    </tr>
-    <tr>
-        <td align="right">
-            Swiped %:
-            <input id='Pswipe' type='text' value='2.4' />
-        </td>
-        <td align="right">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            Keyed %:
-            <input id='Pkey' type='text' value='3.4' />
-        </td>
- 
-    </tr>
-    <tr>
-        <td>&nbsp;</td>
-    </tr>
-    <tr align='right'>
-        <td>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="page-header">
+        <h1>Compare pricing plans for customers moving from 3 Tier pricing to Simplified Pricing (SPP)<h1>
+          </div>
+          <p></p>
+          <ol>
+            <li>Enter the dollar amounts processed below. Make sure to add them to either Qual, MID-Qual, or NON-Qual</li>
+            <li>Enter your customer's current 3 Tiered discount rates</li>
+            <li>Select how often your customer Swipes vs. Keys their transactions</li>
+            <li>Click the Compare Rates button at the bottom</li>
+          </ol>
+        </div>
+      </div>
 
-        </td>
-        <td>
-            <h3>
-                <strong>The total charges are....&nbsp; </strong>&nbsp; &nbsp;&nbsp;
-                $<input id='PTotal' type='text' />
-            </h3>
-        </td>
-    </tr>
-</table>
- 
- 
-<br><br><br>
-<form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
-<div>
-<u>Select how much they Swipe and Key:</u><br><br>
-    <input type="radio" name="Key" > All Keyed<br>
-        <input type="radio" name="SomeKey" > Mostly Keyed<br>
-            <input type="radio" name="Half" > Half and Half<br>
-                <input type="radio" name="SomeSwipe" > Mostly Swiped<br>
-                    <input type="radio" name="Swipe" > All Swiped<br>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-lg-6">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="qual_d" class="col-lg-4 control-label text-right">Qual $</label>
+                <div class="col-lg-8">
+                  <input type="email" class="form-control" id="qual_d" value="1000.00">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mqual_d" class="col-lg-4 control-label text-right">Mid-Qual $</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="email" id="mqual_d" value="2500.00">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nqual_d" class="col-lg-4 control-label text-right">Non-Qual $</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="email" id="nqual_d" value="1200.00">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label for="qual" class="col-lg-4 control-label text-right">Qual %</label>
+                <div class="col-lg-8">
+                  <input type="email" class="form-control" id="qual" value="1.69">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mqual" class="col-lg-4 control-label text-right">Mid-Qual %</label>
+                <div class="col-lg-8">
+                  <input class="form-control" id="mqual" value="2.52">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nqual" class="col-lg-4 control-label text-right">Non-Qual %</label>
+                <div class="col-lg-8">
+                  <input class="form-control" id="nqual" value="3.96">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="" class="col-lg-4 control-label text-right">Total:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" id="3TTotal"  disabled>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h4>SPP Subscription</h4>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="qual" class="col-lg-2 control-label text-right">Swiped %</label>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" id="Sswipe" value="1.75">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="qual" class="col-lg-2 control-label text-right">Keyed %</label>
+              <div class="col-lg-6">
+                <input class="form-control" type="email" id="Skey" value="3.15">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="qual" class="col-lg-2 control-label text-right">Total:</label>
+              <div class="col-lg-6">
+                <input class="form-control" id="STotal" disabled>
+              </div>
+            </div>
+            <div class="col-lg-4 control-label text-right">
+            <p id='text_display'>Hello there<p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h4>SPP Pay As You Go</h4>
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="Sswipe" class="col-lg-2 control-label text-right">Swiped %</label>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" id="Pswipe" value="2.4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Skey" class="col-lg-2 control-label text-right">Keyed %</label>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" id="Pkey" value="3.4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="STotal" class="col-lg-2 control-label text-right">Total:</label>
+              <div class="col-lg-6">
+                <input class="form-control" id="PTotal" disabled>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <label>How often do they <i>Swipe</i> their transactions?</label>
+          <div class="col-lg-offset-2">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" class="radio1" value="option1" checked>
+                Never (0% Swipe / 100% Key)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" class="radio2" value="option2">
+                Some of the time (25% Swipe / 75% Key)
+              </label>
+            </div>
+            <div class="radio ">
+              <label>
+                <input type="radio" name="optionsRadios" class="radio3" value="option3" >
+                Half of the time (50% Swipe / 50% Key)
+              </label>
+            </div>
+            <div class="radio ">
+              <label>
+                <input type="radio" name="optionsRadios" class="radio4" value="option4" >
+                Most of the time (75% Swipe / 25% Key)
+              </label>
+            </div>
+            <div class="radio ">
+              <label>
+                <input type="radio" name="optionsRadios" class="radio5" value="option5" >
+                Always (100% Swipe / 0% Key)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="col-lg-offset-2">
+            <button type="submit" id="btnSubmit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+        <h2><h2>
+    </div>
+
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+          <script src="https://intuitcorp.quickbase.com/up/bh2t5a7rs/g/r9/eg/va/main.js"></script>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</form>
-<br><br><br>
- 
- 
-<button id="btnSubmit">Compare Rates</button>
- 
- 
 </body>
 </html>
